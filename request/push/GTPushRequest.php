@@ -25,6 +25,8 @@ class GTPushRequest extends GTApiRequest
     private $alias;
     //设置cid列表，用于tolist-cid批量推送
     private $cidList;
+    //设置taskid，用于tolist-cid批量推送
+    private $taskId;
     //设置别名列表，用于tolist-别名批量推送
     private $aliasList;
     //对指定应用的符合筛选条件的用户群发推送消息。支持定时、定速功能。
@@ -91,6 +93,12 @@ class GTPushRequest extends GTApiRequest
     public function setCidList($cidList)
     {
         $this->cidList = $cidList;
+    }
+
+    public function setTaskId($taskId)
+    {
+        $this->taskId = $taskId;
+        $this->apiParam["taskid"] = $taskId;
     }
 
     public function getRequestId()
